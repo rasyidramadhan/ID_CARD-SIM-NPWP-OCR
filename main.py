@@ -8,7 +8,7 @@ import os, time, shutil, json
 try:
     from paddleocr import PaddleOCR
 
-    ocr = PaddleOCR(use_angle_cls=True, lang='id', show_log=False, use_textline_orientation=True,
+    ocr = PaddleOCR(use_angle_cls=True, lang='en', show_log=False, use_textline_orientation=True,
             # det_model_dir = Your detection model path,
             # rec_model_dir = Your recognition model path
             )
@@ -114,4 +114,5 @@ def delete_file(file_name: str):
     
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run("main:app", host="127.0.0.1", port=2000, reload=True)
